@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,11 @@ class HomeController extends Controller
        /*  $users = User::with('address')->get();
         return $users; */
 
-        $addresses = Address::with('user')->get();
-        return $addresses;
+        //Understanding one to one inverse relation
+        /* $addresses = Address::with('user')->get();
+        return $addresses; */
+
+        $categories = Category::find(3)->posts;
+        return view('home', compact('categories'));
     }
 }
