@@ -12,7 +12,7 @@ class ImageController extends Controller
             'image' => ['required', 'image', 'max:5000']
         ]);
 
-        $request->image->storeAs('/', 'first_uploaded_image');
+        $request->image->storeAs('/', 'first_uploaded_image.jpg');
 
         return redirect()->back();
     }
