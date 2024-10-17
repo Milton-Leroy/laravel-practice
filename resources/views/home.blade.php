@@ -1,10 +1,13 @@
 <div class="flex w-full h-full">
-    @foreach ($categories as $category)
-        <div class="flex flex-column items-center w-80 h-80 shadow">
-            <h4>{{ $category->title }}</h4>
-            <p>{{ $category->description }}</p>
-            <p>{{ $category->category->name }}</p>
+   <form action="{{ route('upload-file') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="" style="margin-top: 20px">
+            <label for="">Upload</label>
+            <input type="file" name="image" id="">
         </div>
-    @endforeach
+        <div style="margin:5px">
+            <button type="submit">Submit</button>
+        </div>
+   </form>
 
 </div>

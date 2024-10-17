@@ -28,9 +28,11 @@ class HomeController extends Controller
        /*  $categories = Category::find(3)->posts;
         return view('home', compact('categories')); */
 
-        $post = Post::first();
+        /* $post = Post::first();
         $tag = Tag::find(2);
 
-        return $post->tags()->attach($tag);
+        return $post->tags()->attach($tag); */
+
+        return view('home');
     }
 }
