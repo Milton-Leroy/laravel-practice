@@ -8,6 +8,7 @@
 </head>
 <body>
     This is the order details for your purchase.
+    Find an attachment below for the details.
 </body>
 </html>
 
