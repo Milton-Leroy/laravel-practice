@@ -46,5 +46,12 @@ Route::get('get-session', function(Request $request){
 
     $data = $request->session()->all();
 
+    //$data = $request->session()->get('_token');
+
     dd($data);
+});
+
+Route::get('save-session', function(Request $request){
+    $request->session()->put('user_id', '#452er45');
+    return redirect('get-session');
 });
