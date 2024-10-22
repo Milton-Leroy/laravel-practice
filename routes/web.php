@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
+use App\Mail\Order;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +23,19 @@ Route::get('/', function () {
 
 Route::group([
         'middleware' => ['authcheck'],
-        'prefix' => 'user'
+        'prefix' => 'user',
+        'as' => 'user.'
     ], function(){
         Route::get('/home', HomeController::class);
         Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
+});
+
+Route::get('send-mail', function(){
+   /*  Mail::raw('This is a test mail, to test sending mails', function($message){
+        $message->to('test@gmail.com')->subject('No reply');
+    }); */
+
+    Mail::send(new Order);
+
+    dd('Mail sent successfully');
 });
