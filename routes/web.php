@@ -52,8 +52,14 @@ Route::get('get-session', function(Request $request){
 });
 
 Route::get('save-session', function(Request $request){
-    //$request->session()->put('user_id', '#452er45');
-    //$request->session()->put(['status' => 'authenticated', 'type' => 'admin']);
+    $request->session()->put('user_id', '#452er45');
+    $request->session()->put(['status' => 'authenticated', 'type' => 'admin']);
     session(['number' => '675243564']);
+    return redirect('get-session');
+});
+
+Route::get('destroy-session-data', function(Request $request){
+    //$request->session()->forget('type');
+    session()->forget(['status', 'number']);
     return redirect('get-session');
 });
