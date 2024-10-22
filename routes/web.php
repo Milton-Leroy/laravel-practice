@@ -60,6 +60,8 @@ Route::get('save-session', function(Request $request){
 
 Route::get('destroy-session-data', function(Request $request){
     //$request->session()->forget('type');
-    session()->forget(['status', 'number']);
+    //session()->forget(['status', 'number']);
+    //session()->flush();
+    $request->session()->flush();
     return redirect('get-session');
 });
