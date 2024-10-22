@@ -42,5 +42,9 @@ Route::get('send-mail', function(){
 });
 
 Route::get('get-session', function(Request $request){
-    $data = session()
+    /* $data = session()->all(); */
+
+    $data = $request->session()->all();
+
+    dd($data);
 });
