@@ -10,7 +10,7 @@
 
     <div class="flex w-full h-full">
         <img src="{{ asset('/storage/first_uploaded_image.jpg') }}" alt="img">
-       <form action="{{ route('upload-file') }}" method="POST" enctype="multipart/form-data">
+       <form action="{{ route('user/upload-file') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="" style="margin-top: 20px">
                 <label for="">Upload</label>
