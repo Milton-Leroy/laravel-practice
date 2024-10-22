@@ -15,6 +15,11 @@ class Authcheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if($request->has('auth') && $request->auth == 1){
+            return $next($request);
+        }
+
+        abort(403);
+
     }
 }

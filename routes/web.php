@@ -19,5 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', HomeController::class);
-Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
+Route::group([
+        'middleware' => ['authcheck'],
+        'prefix' => 'user'
+    ], function(){
+        Route::get('/home', HomeController::class);
+        Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
+});
