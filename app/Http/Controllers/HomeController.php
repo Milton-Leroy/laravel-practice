@@ -28,6 +28,7 @@ class HomeController extends Controller
        /*  $categories = Category::find(3)->posts;
         return view('home', compact('categories')); */
 
+        //ubderstanding manay to many relationships
         /* $post = Post::first();
         $tag = Tag::find(2);
 
