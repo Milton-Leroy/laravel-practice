@@ -1,0 +1,11 @@
+Differences between Authentication and Authorization
+
+#Authentication
+    This is the process of identifying a user. It is always characterized by the user entering some credentials like; username and password.
+    Where if the credentials are valid the user is then given the right to access some feaures which otherwise he/she won't be able to.
+
+
+#Authorization
+    This is giving users certain permissions inorder to carry out and activity. Without the permissions, the user wont be able to.
+    E.g inorder to delete a post in a blog website a user must have delete permisssions. Thus the useris authorized to delete if he has the
+    permissions else he won't be able to
