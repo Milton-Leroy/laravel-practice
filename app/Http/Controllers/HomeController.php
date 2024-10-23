@@ -26,10 +26,12 @@ class HomeController extends Controller
         return $addresses; */
 
         //one to many relation
-        $categories = Cache::remember('categories', 60, function(){
+        $categories = Cache::remember('categories', 60*5, function(){
             return Category::find(3)->posts;
         });
         return view('home', compact('categories'));
+
+        //rememberForever('key', function(){}); we dont need a time duration and thus is used to store data forever in the cache
 
         //ubderstanding manay to many relationships
         /* $post = Post::first();
