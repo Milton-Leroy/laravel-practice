@@ -20,7 +20,13 @@
                 <button type="submit">Submit</button>
             </div>
        </form>
+    </div>
 
+    <div>
+        @foreach ($categories as $ctg)
+            <h2>{{ $ctg->title }}</h2>
+            <p>{{ $ctg->description }}</p>
+        @endforeach
     </div>
 
 </body>

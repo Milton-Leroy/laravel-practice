@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,10 @@ class HomeController extends Controller
         return $addresses; */
 
         //one to many relation
-       /*  $categories = Category::find(3)->posts;
-        return view('home', compact('categories')); */
+        $categories = Cache::remember('categories', 60, function(){
+            return Category::find(3)->posts;
+        });
+        return view('home', compact('categories'));
 
         //ubderstanding manay to many relationships
         /* $post = Post::first();
@@ -34,6 +37,6 @@ class HomeController extends Controller
 
         return $post->tags()->attach($tag); */
 
-        return view('home');
+        //return view('home');
     }
 }
