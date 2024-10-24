@@ -10,7 +10,8 @@
 
     <div class="flex w-full h-full">
         <img src="{{ asset('/storage/first_uploaded_image.jpg') }}" alt="img">
-       <form action="{{ route('user.upload-file') }}" method="POST" enctype="multipart/form-data">
+        @can('upload')
+        <form action="{{ route('user.upload-file', '?auth=1') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="" style="margin-top: 20px">
                 <label for="">Upload</label>
@@ -19,13 +20,14 @@
             <div style="margin:5px">
                 <button type="submit">Submit</button>
             </div>
-       </form>
+        </form>
+        @endcan
     </div>
 
     <div>
         @foreach ($categories as $ctg)
-            <h2>{{ $ctg->title }}</h2>
-            <p>{{ $ctg->description }}</p>
+        <h2>{{ $ctg->title }}</h2>
+        <p>{{ $ctg->description }}</p>
         @endforeach
     </div>
 
