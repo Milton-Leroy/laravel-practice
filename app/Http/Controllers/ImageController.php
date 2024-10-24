@@ -8,6 +8,8 @@ class ImageController extends Controller
 {
     public function handleImage(Request $request)
     {
+        $this->authorize('upload');
+
         $request->validate([
             'image' => ['required', 'image', 'max:5000']
         ]);

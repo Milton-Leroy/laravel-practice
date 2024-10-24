@@ -26,6 +26,10 @@ class HomeController extends Controller
         return $addresses; */
 
         //one to many relation
+
+        //authorization. check if the user has the permision to do so.
+        $this->authorize('view_home');
+
         $categories = Cache::remember('categories', 60*5, function(){
             return Category::find(3)->posts;
         });
