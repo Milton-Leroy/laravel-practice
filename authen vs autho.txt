@@ -8,4 +8,6 @@ Differences between Authentication and Authorization
 #Authorization
     This is giving users certain permissions inorder to carry out and activity. Without the permissions, the user wont be able to.
     E.g inorder to delete a post in a blog website a user must have delete permisssions. Thus the useris authorized to delete if he has the
-    permissions else he won't be able to
+    permissions else he won't be able to.
+
+
