@@ -1,0 +1,21 @@
+*Differences between Authentication and Authorization
+
+#Authentication
+    This is the process of identifying a user. It is always characterized by the user entering some credentials like; username and password.
+    Where if the credentials are valid the user is then given the right to access some feaures which otherwise he/she won't be able to.
+
+
+#Authorization
+    This is giving users certain permissions inorder to carry out and activity. Without the permissions, the user wont be able to.
+    E.g inorder to delete a post in a blog website a user must have delete permisssions. Thus the useris authorized to delete if he has the
+    permissions else he won't be able to. Implemented using gates, policies, roles and permissions.
+
+*Other Explanations
+
+#Queues
+    They are used to handle processes in our applications that take a long while to complete like sending an email  or uploading a file.
+    An email will take atleast 5s to be sent, and during this time the user wont be able touse our application. So in this light, queues come
+    in handy. We create a queue table (migration) for storing all jobs with the commnad "php artisan queue:table" and finally we create the job with
+    the command "php artisan make:job JobName" where our logic goes.
+    We then dispatch our job to a queue by JobName::dispatch. We  handle the job with the artisan command "php artisan queue:work
+

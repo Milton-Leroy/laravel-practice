@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProfileController;
+use App\Jobs\SendMail;
 use App\Mail\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -48,7 +49,7 @@ Route::get('send-mail', function(){
     $message->to('test@gmail.com')->subject('No reply');
 }); */
 
-Mail::send(new Order);
+SendMail::dispatch();
 
 dd('Mail sent successfully');
 });
@@ -88,5 +89,6 @@ Route::get('forget-cache', function(){
 Cache::forget('categories');
 return redirect('user/home?auth=1');
 });
+
 
 require __DIR__.'/auth.php';
