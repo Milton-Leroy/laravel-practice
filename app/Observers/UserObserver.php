@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Jobs\SendMail;
 use App\Models\User;
 
 class UserObserver
@@ -11,7 +12,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        //
+        SendMail::dispatch();
     }
 
     /**

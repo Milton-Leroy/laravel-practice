@@ -21,4 +21,4 @@
 
 
 #Observers
-    Used to encapsulate logic that should be executed when a certain event in performed
+    Used to encapsulate logic that should be executed when a certain event in performed. Onl used un eleoquent models
