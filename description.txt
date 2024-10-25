@@ -17,5 +17,8 @@
     An email will take atleast 5s to be sent, and during this time the user wont be able touse our application. So in this light, queues come
     in handy. We create a queue table (migration) for storing all jobs with the commnad "php artisan queue:table" and finally we create the job with
     the command "php artisan make:job JobName" where our logic goes.
-    We then dispatch our job to a queue by JobName::dispatch. We  handle the job with the artisan command "php artisan queue:work
+    We then dispatch our job to a queue by JobName::dispatch. We  handle the job with the artisan command "php artisan queue:work"
 
+
+#Observers
+    Used to encapsulate logic that should be executed when a certain event in performed
